@@ -1,6 +1,6 @@
-# Epic Seven Discord Bot - Documentation
+# Ciderbot - Documentation
 
-A modular Discord bot featuring Epic Seven game mechanics, moderation tools, and Umamusume utilities. Built with Python using discord.py and organized into a clean, maintainable cog-based architecture.
+A modular Discord bot featuring Epic Seven/Uma Musume Pretty Derby game mechanics, moderation tools, and Umamusume utilities. Built with Python using discord.py and organized into a clean, maintainable cog-based architecture.
 
 ## 📁 Project Structure
 
@@ -15,6 +15,8 @@ discord-bot/
 │   ├── utilities.py    # Basic utilities and Umamusume commands
 │   ├── skill_check.py  # Umamusume skill viability checker
 │   └── skill_data.py   # Comprehensive skill database
+├── pyproject.toml      # Dependency management
+├── uv.lock            # Locked dependency versions
 └── README.md           # This documentation
 ```
 
@@ -26,7 +28,7 @@ discord-bot/
 - Discord server with appropriate permissions
 
 ### Setup
-1. **Environment Variables**: Add your Discord bot token to Enviornment Variables
+1. **Environment Variables**: Add your Discord bot token to environment variables
    - Key: `DISCORD_BOT_TOKEN`
    - Value: Your Discord bot token
 
@@ -41,7 +43,11 @@ discord-bot/
 
 ### Running the Bot
 ```bash
-python main.py
+# Install dependencies
+uv sync
+
+# Run the bot
+uv run python main.py
 ```
 
 The bot automatically loads all cogs and starts the health check server on port 5000.
@@ -98,10 +104,10 @@ class DiscordBot(commands.Bot):
 
 **Usage Example**:
 ```bash
-curl https://your-replit-url.replit.dev/
+curl http://your-host:5000/
 # Response: "Bot is up and running! ✅"
 
-curl https://your-replit-url.replit.dev/status
+curl http://your-host:5000/status
 # Response: "Bot Status: Online ✅\nConnected to 3 servers\nLatency: 25ms"
 ```
 
@@ -389,34 +395,36 @@ Use these methods to test new functionality:
 1. **Text Commands**: Test with `?command_name` in Discord
 2. **Slash Commands**: Use `/command_name` and check autocomplete
 3. **Error Cases**: Test invalid inputs, missing permissions, etc.
-4. **Health Check**: Visit your Replit URL to verify health endpoint
+4. **Health Check**: Visit your health endpoint to verify status
 
 ## 🚀 Deployment
 
-### Replit Deployment
-The bot is configured for seamless Replit deployment:
+### Local Development
+```bash
+# Install dependencies
+uv sync
 
-1. **Automatic Startup**: main.py handles initialization
-2. **Health Monitoring**: Built-in health check server on port 5000
-3. **Environment Variables**: Secure token management through Replit Secrets
-4. **24/7 Uptime**: Ready for Reserved VM deployment
+# Run with environment file
+uv run --env-file .env python main.py
+```
 
-### Production Considerations
-- **Reserved VM**: Use Replit Reserved VM for 24/7 uptime
-- **Monitoring**: Set up UptimeRobot to monitor the health endpoint
-- **Logging**: Console logs available through Replit workflow interface
-- **Updates**: Hot-reload supported by restarting the workflow
+### Production Deployment
+The bot is configured for deployment on platforms like Railway, Heroku, or any cloud provider:
 
-### Monitoring Endpoints
-- **Health Check**: `https://your-replit-url.replit.dev/`
-- **Status Check**: `https://your-replit-url.replit.dev/status`
+1. **Set environment variables** for `DISCORD_BOT_TOKEN`
+2. **Install dependencies** using `uv sync`
+3. **Run the bot** with `python main.py`
+
+### Health Monitoring
+- **Health Check**: `http://your-host:5000/`
+- **Status Check**: `http://your-host:5000/status`
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
 #### Bot Not Starting
-- **Check Token**: Verify `DISCORD_BOT_TOKEN` is set in Replit Secrets
+- **Check Token**: Verify `DISCORD_BOT_TOKEN` is set in environment variables
 - **Check Permissions**: Ensure bot has required Discord permissions
 - **Check Logs**: Review console output for specific error messages
 
@@ -428,7 +436,7 @@ The bot is configured for seamless Replit deployment:
 #### Health Check Issues
 - **Port Conflicts**: Health server uses port 5000 exclusively
 - **Thread Issues**: Health server runs in daemon thread, check if Flask starts
-- **Firewall**: Ensure Replit allows external access to port 5000
+- **Firewall**: Ensure host allows access to port 5000
 
 ### Debug Mode
 Enable debug logging by modifying the health server:
@@ -470,7 +478,7 @@ self.app.run(host='0.0.0.0', port=5000, debug=True)
 ## 📞 Support
 
 ### Getting Help
-1. **Check Logs**: Review workflow console output
+1. **Check Logs**: Review console output
 2. **Test Commands**: Verify individual command functionality
 3. **Check Status**: Use health endpoints to verify bot status
 4. **Review Documentation**: This README covers most common scenarios
@@ -482,4 +490,4 @@ The modular cog system makes it easy to add new features:
 - Integration with external APIs
 - Custom event handlers
 
-This documentation covers the complete modular Discord bot architecture, providing a maintainable and scalable foundation for your Epic Seven and Umamusume community bot.
+This documentation covers the complete modular Discord bot architecture, providing a maintainable and scalable foundation for your Epic Seven and Uma Musume community bot.
