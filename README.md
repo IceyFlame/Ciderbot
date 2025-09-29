@@ -6,9 +6,9 @@ A modular Discord bot featuring Epic Seven/Uma Musume Pretty Derby game mechanic
 
 ```
 discord-bot/
-├── main.py              # Entry point - Bot initialization and cog loading
-├── config.py            # Centralized configuration management
-├── health_server.py     # Flask health check web server
+├── main.py             # Entry point - Bot initialization and cog loading
+├── config.py           # Centralized configuration management
+├── health_server.py    # Flask health check web server
 ├── cogs/               # Modular command cogs
 │   ├── moderation.py   # Server moderation commands
 │   ├── fun_commands.py # Fun Commands
@@ -18,7 +18,7 @@ discord-bot/
 │   ├── cups_info.py    # information on upcoming Champions Meet
 │   └── skill_data.py   # Comprehensive skill database
 ├── pyproject.toml      # Dependency management
-├── uv.lock            # Locked dependency versions
+├── uv.lock             # Locked dependency versions
 └── README.md           # This documentation
 ```
 

@@ -1,15 +1,15 @@
 class CM_Cup:
-    def __init__(self, name, course, distance, track_type, going, season, weather):
+    def __init__(self, name, course, distance, track_type, condition, season, weather):
         self.name = name
         self.course = course
         self.distance = distance
         self.track_type = track_type
-        self.going = going
+        self.condition = condition
         self.season = season
         self.weather = weather
     def get_formatted_info(self):
         """Returns the cup information in the formatted string"""
-        return f"{self.course}\n{self.distance}\n{self.track_type}\n{self.going} — {self.season} — {self.weather}"
+        return f"{self.course}\n{self.distance}\n{self.track_type}\n{self.condition} — {self.season} — {self.weather}"
 
 # Champions Meet database
 CM_DATABASE = {
@@ -18,7 +18,7 @@ CM_DATABASE = {
         course="Tokyo — Turf",
         distance="2400 m — Medium",
         track_type="Counterclockwise (LEFT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Spring",
         weather="Sunny"
     ),
@@ -27,7 +27,7 @@ CM_DATABASE = {
         course="Kyoto — Turf",
         distance="3200 m — Long",
         track_type="Clockwise (RIGHT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Spring",
         weather="Sunny"
     ),
@@ -36,7 +36,7 @@ CM_DATABASE = {
         course="Tokyo — Turf",
         distance="1600 m — Mile",
         track_type="Counterclockwise (LEFT-handed)",
-        going="Good",
+        condition="Good",
         season="Summer",
         weather="Sunny"
     ),
@@ -45,7 +45,7 @@ CM_DATABASE = {
         course="Hanshin — Turf",
         distance="2200 m — Medium",
         track_type="Clockwise (RIGHT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Summer",
         weather="Sunny"
     ),
@@ -54,7 +54,7 @@ CM_DATABASE = {
         course="Hanshin — Turf",
         distance="1600 m — Mile",
         track_type="Clockwise (RIGHT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Autumn",
         weather="Sunny"
     ),
@@ -63,7 +63,7 @@ CM_DATABASE = {
         course="Kyoto — Turf",
         distance="3000 m — Long",
         track_type="Clockwise (RIGHT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Autumn",
         weather="Sunny"
     ),
@@ -72,7 +72,7 @@ CM_DATABASE = {
         course="Tokyo — Turf",
         distance="2000 m — Medium",
         track_type="Counterclockwise (LEFT-handed)",
-        going="Soft",
+        condition="Soft",
         season="Autumn",
         weather="Rain"
     ),
@@ -81,7 +81,7 @@ CM_DATABASE = {
         course="Nakayama — Turf",
         distance="2500 m — Long",
         track_type="Clockwise (RIGHT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Winter",
         weather="Sunny"
     ),
@@ -90,7 +90,7 @@ CM_DATABASE = {
         course="Chukyo — Turf",
         distance="1200 m — Short",
         track_type="Counterclockwise (LEFT-handed)",
-        going="Soft",
+        condition="Soft",
         season="Winter",
         weather="Snow"
     ),
@@ -99,7 +99,7 @@ CM_DATABASE = {
         course="Tokyo — Dirt",
         distance="1600 m — Mile",
         track_type="Counterclockwise (LEFT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Winter",
         weather="Sunny"
     ),
@@ -108,7 +108,7 @@ CM_DATABASE = {
         course="Hanshin — Turf",
         distance="3200 m — Long",
         track_type="Clockwise (RIGHT-handed)",
-        going="Heavy",
+        condition="Heavy",
         season="Spring",
         weather="Rain"
     ),
@@ -117,7 +117,7 @@ CM_DATABASE = {
         course="Nakayama — Turf",
         distance="2000 m — Medium",
         track_type="Clockwise (RIGHT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Spring",
         weather="Sunny"
     ),
@@ -126,7 +126,7 @@ CM_DATABASE = {
         course="Tokyo — Turf",
         distance="1600 m — Mile",
         track_type="Counterclockwise (LEFT-handed)",
-        going="Heavy",
+        condition="Heavy",
         season="Spring",
         weather="Rain"
     ),
@@ -135,7 +135,7 @@ CM_DATABASE = {
         course="Funabashi — Dirt",
         distance="1600 m — Mile",
         track_type="Counterclockwise (LEFT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Summer",
         weather="Sunny"
     ),
@@ -144,7 +144,7 @@ CM_DATABASE = {
         course="Longchamp — Turf",
         distance="2400 m — Medium",
         track_type="Clockwise (RIGHT-handed)",
-        going="Soft",
+        condition="Soft",
         season="Autumn",
         weather="Rain"
     ),
@@ -153,7 +153,7 @@ CM_DATABASE = {
         course="Nakayama — Turf",
         distance="2500 m — Long",
         track_type="Clockwise (RIGHT-handed)",
-        going="Soft",
+        condition="Soft",
         season="Winter",
         weather="Snow"
     ),
@@ -162,7 +162,7 @@ CM_DATABASE = {
         course="Hanshin — Turf",
         distance="1400 m — Short",
         track_type="Clockwise (RIGHT-handed)",
-        going="Good",
+        condition="Good",
         season="Winter",
         weather="Cloudy"
     ),
@@ -171,7 +171,7 @@ CM_DATABASE = {
         course="Hanshin — Turf",
         distance="1600 m — Mile",
         track_type="Clockwise (RIGHT-handed)",
-        going="Firm",
+        condition="Firm",
         season="Spring",
         weather="Sunny"
     )
