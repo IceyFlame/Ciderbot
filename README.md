@@ -11,9 +11,11 @@ discord-bot/
 ├── health_server.py     # Flask health check web server
 ├── cogs/               # Modular command cogs
 │   ├── moderation.py   # Server moderation commands
-│   ├── fun_commands.py # Epic Seven game features
-│   ├── utilities.py    # Basic utilities and Umamusume commands
-│   ├── skill_check.py  # Umamusume skill viability checker
+│   ├── fun_commands.py # Fun Commands
+│   ├── utilities.py    # Basic utilities and Uma Musume commands
+│   ├── skill_check.py  # Uma Musume skill viability checker
+│   ├── cm_info.py      # Uma Musume Champions Meet info
+│   ├── cups_info.py    # information on upcoming Champions Meet
 │   └── skill_data.py   # Comprehensive skill database
 ├── pyproject.toml      # Dependency management
 ├── uv.lock            # Locked dependency versions

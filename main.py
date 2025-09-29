@@ -63,7 +63,7 @@ async def main():
     bot = DiscordBot()
     
     try:
-        await bot.start(os.getenv('DISCORD_BOT_TOKEN'))  # type: ignore
+        await bot.start(os.getenv('DISCORD_BOT_TOKEN'))
     except KeyboardInterrupt:
         print("Bot shutting down...")
     except Exception as e:
