@@ -15,7 +15,6 @@ discord-bot/
 │   ├── utilities.py    # Basic utilities and Umamusume commands
 │   ├── skill_check.py  # Umamusume skill viability checker
 │   └── skill_data.py   # Comprehensive skill database
-├── replit.md           # Project metadata
 └── README.md           # This documentation
 ```
 
@@ -27,7 +26,7 @@ discord-bot/
 - Discord server with appropriate permissions
 
 ### Setup
-1. **Environment Variables**: Add your Discord bot token to Replit Secrets
+1. **Environment Variables**: Add your Discord bot token to Enviornment Variables
    - Key: `DISCORD_BOT_TOKEN`
    - Value: Your Discord bot token
 
