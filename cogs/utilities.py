@@ -3,7 +3,6 @@ import random
 from discord.ext import commands
 from health_server import HealthServer
 
-
 class Utilities(commands.Cog):
     """Utility commands and basic bot functions"""
 

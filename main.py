@@ -27,7 +27,8 @@ class DiscordBot(commands.Bot):
             'cogs.utilities',
             'cogs.fun_commands', 
             'cogs.moderation',
-            'cogs.skill_check'
+            'cogs.skill_check',
+            'cogs.cm_info'
         ]
         
         for cog in cogs_to_load:
