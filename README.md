@@ -482,6 +482,7 @@ self.app.run(host='0.0.0.0', port=5000, debug=True)
 2. **Test Commands**: Verify individual command functionality
 3. **Check Status**: Use health endpoints to verify bot status
 4. **Review Documentation**: This README covers most common scenarios
+5. **Message Me:** DM Ciderneko on Discord. Or just ask ChatGPT/DeepSeek, I have no clue what I'm doing either
 
 ### Extending the Bot
 The modular cog system makes it easy to add new features:
