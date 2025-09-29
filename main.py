@@ -3,6 +3,9 @@ from discord.ext import commands
 import asyncio
 import os
 from config import Config
+from dotenv import load_dotenv
+
+load_dotenv('.env')
 
 class DiscordBot(commands.Bot):
     """Main Discord bot class"""
@@ -53,14 +56,13 @@ async def main():
         Config.validate()
     except ValueError as e:
         print(f"Configuration error: {e}")
-        print("Please add your Discord bot token to the Secrets tab.")
         return
     
     # Create and run bot
     bot = DiscordBot()
     
     try:
-        await bot.start(Config.DISCORD_BOT_TOKEN)  # type: ignore
+        await bot.start(os.getenv('DISCORD_BOT_TOKEN'))  # type: ignore
     except KeyboardInterrupt:
         print("Bot shutting down...")
     except Exception as e:
