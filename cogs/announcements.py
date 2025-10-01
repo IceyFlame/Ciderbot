@@ -5,7 +5,8 @@ from discord import app_commands
 class announcements(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
+    @app_commands.default_permissions(manage_messages=True)
+    @app_commands.checks.has_permissions(manage_messages=True)
     @app_commands.command(name="announce", description="Make an announcement with an embed")
     @app_commands.describe(
         title="The title of the announcement",
@@ -72,6 +73,8 @@ class announcements(commands.Cog):
             await interaction.response.send_message(f"❌ Failed to send announcement: {e}", ephemeral=True)
 
     # Optional: Add a simpler version with just title and description
+    @app_commands.default_permissions(manage_messages=True)
+    @app_commands.checks.has_permissions(manage_messages=True)
     @app_commands.command(name="quickannounce", description="Make a quick announcement")
     @app_commands.describe(
         title="The title of the announcement",
@@ -86,8 +89,8 @@ class announcements(commands.Cog):
         )
         embed.set_footer(text=f"Announced by {interaction.user.display_name}")
 
-        await interaction.channel.send(embed=embed)
         await interaction.response.send_message("✅ Quick announcement sent!", ephemeral=True)
+        await interaction.channel.send(embed=embed)
 
 
 async def setup(bot):
