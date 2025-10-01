@@ -20,7 +20,7 @@ skill_categories = {
     "Other": other_skills
 }
 
-class SkillCheckCog(commands.Cog):
+class SkillCheck(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -114,4 +114,4 @@ class SkillCheckCog(commands.Cog):
         return matches
 
 async def setup(bot):
-    await bot.add_cog(SkillCheckCog(bot))
+    await bot.add_cog(SkillCheck(bot))
