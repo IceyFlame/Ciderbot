@@ -182,7 +182,6 @@ usa_vehicles = [
     {'name': 'ADATS', 'br': 11.7, 'type': 'spaa', 'nation': 'usa', 'premium': False},
     {'name': 'M1A2 SEP V2', 'br': 12.7, 'type': 'medium_tank', 'nation': 'usa', 'premium': False},
     {'name': 'CLAWS (TADS)', 'br': 12.3, 'type': 'spaa', 'nation': 'usa', 'premium': False},
-    {'name': 'CLAWS (TEL)', 'br': 12.3, 'type': 'spaa', 'nation': 'usa', 'premium': False},
 ]
 
 # Germany Vehicles
@@ -295,7 +294,7 @@ germany_vehicles = [
     {'name': 'Panther F', 'br': 6.0, 'type': 'medium_tank', 'nation': 'germany', 'premium': False},
     {'name': 'Zerstörer 45', 'br': 6.0, 'type': 'spaa', 'nation': 'germany', 'premium': False},
     {'name': 'Jagdpanther G1', 'br': 6.3, 'type': 'tank_destroyer', 'nation': 'germany', 'premium': False},
-    {'name': 'JPz 4-5', 'br': 6.3, 'type': 'tank_destroyer', 'nation': 'germany', 'premium': False},
+    {'name': 'japanz 4-5', 'br': 6.3, 'type': 'tank_destroyer', 'nation': 'germany', 'premium': False},
     {'name': 'leKPz M41', 'br': 6.7, 'type': 'light_tank', 'nation': 'germany', 'premium': False},
     {'name': 'Tiger II', 'br': 6.7, 'type': 'heavy_tank', 'nation': 'germany', 'premium': False},
     {'name': 'Kugelblitz', 'br': 6.7, 'type': 'spaa', 'nation': 'germany', 'premium': False},
@@ -326,7 +325,7 @@ germany_vehicles = [
     {'name': 'DF105', 'br': 8.0, 'type': 'light_tank', 'nation': 'germany', 'premium': False},
     {'name': 'Luchs A2', 'br': 7.3, 'type': 'light_tank', 'nation': 'germany', 'premium': False},
     {'name': 'Raketenautomat', 'br': 8.0, 'type': 'spaa', 'nation': 'germany', 'premium': False},
-    {'name': 'RakJPz 2', 'br': 8.0, 'type': 'tank_destroyer', 'nation': 'germany', 'premium': False},
+    {'name': 'Rakjapanz 2', 'br': 8.0, 'type': 'tank_destroyer', 'nation': 'germany', 'premium': False},
     
     # Rank V - Premium
     {'name': 'mKPz M47 G', 'br': 7.3, 'type': 'medium_tank', 'nation': 'germany', 'premium': True},
@@ -342,7 +341,7 @@ germany_vehicles = [
     {'name': 'Leopard A1A1', 'br': 9.0, 'type': 'medium_tank', 'nation': 'germany', 'premium': False},
     {'name': 'Leopard 1A5', 'br': 9.3, 'type': 'medium_tank', 'nation': 'germany', 'premium': False},
     {'name': 'Gepard', 'br': 8.3, 'type': 'spaa', 'nation': 'germany', 'premium': False},
-    {'name': 'RakJPz 2 (HOT)', 'br': 8.3, 'type': 'tank_destroyer', 'nation': 'germany', 'premium': False},
+    {'name': 'Rakjapanz 2 (HOT)', 'br': 8.3, 'type': 'tank_destroyer', 'nation': 'germany', 'premium': False},
     {'name': 'Begleitpanzer 57', 'br': 9.7, 'type': 'light_tank', 'nation': 'germany', 'premium': False},
     {'name': 'KPz-70', 'br': 9.3, 'type': 'medium_tank', 'nation': 'germany', 'premium': False},
     {'name': 'M48 Super', 'br': 9.3, 'type': 'medium_tank', 'nation': 'germany', 'premium': False},
@@ -384,7 +383,6 @@ germany_vehicles = [
     {'name': 'FlaRakRad', 'br': 11.7, 'type': 'spaa', 'nation': 'germany', 'premium': False},
     {'name': 'Leopard 2 PSO', 'br': 12.7, 'type': 'medium_tank', 'nation': 'germany', 'premium': False},
     {'name': 'IRIS-T SLM (TADS)', 'br': 12.7, 'type': 'spaa', 'nation': 'germany', 'premium': False},
-    {'name': 'IRIS-T SLM (TEL)', 'br': 12.7, 'type': 'spaa', 'nation': 'germany', 'premium': False},
     {'name': 'Leopard 2A7V', 'br': 12.7, 'type': 'medium_tank', 'nation': 'germany', 'premium': False},
     
     # Rank VIII - Premium/Squadron
@@ -602,17 +600,285 @@ ussr_vehicles = [
     {'name': 'Pantsir-S1', 'br': 12.0, 'type': 'spaa', 'nation': 'ussr', 'premium': False},
     {'name': 'T-90M', 'br': 12.7, 'type': 'medium_tank', 'nation': 'ussr', 'premium': False},
     {'name': '9K317M "BUK-M3" (TADS)', 'br': 12.7, 'type': 'spaa', 'nation': 'ussr', 'premium': False},
-    {'name': '9K317M "BUK-M3" (TELAR)', 'br': 12.7, 'type': 'spaa', 'nation': 'ussr', 'premium': False},
 ]
 
 # Great Britain Vehicles
 britain_vehicles = [
-    {'name': 'Cromwell I', 'br': 3.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False}
+    # Rank I
+    {'name': 'A13 Mk I', 'br': 1.0, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Stuart I', 'br': 2.0, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Tetrarch I', 'br': 1.0, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Light AA Mk I', 'br': 1.0, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Mark V', 'br': 1.0, 'type': 'heavy_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'A13 Mk II', 'br': 1.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Stuart III', 'br': 2.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Daimler Mk II', 'br': 1.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Staghound AA', 'br': 2.0, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'SARC MkIVa', 'br': 1.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+
+    # Rank I Premium
+    {'name': 'A13 Mk I (3rd R.T.R.)', 'br': 1.0, 'type': 'light_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'A13 Mk II 1939', 'br': 1.3, 'type': 'light_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Independent', 'br': 1.3, 'type': 'heavy_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Alecto I', 'br': 1.7, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': True},
+
+    # Rank II
+    {'name': 'Crusader II', 'br': 2.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Crusader III', 'br': 3.0, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Valentine I', 'br': 2.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Valentine XI', 'br': 2.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Valentine IX', 'br': 3.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Archer', 'br': 2.7, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Crusader AA Mk I', 'br': 3.0, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'SARC MkVI (2pdr)', 'br': 2.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Ram I', 'br': 3.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Matilda III', 'br': 2.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Gun Carrier (3-in)', 'br': 3.0, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'AEC AA', 'br': 3.7, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Harry Hopkins I', 'br': 2.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Cromwell V', 'br': 3.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Cromwell I', 'br': 3.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Churchill I', 'br': 3.3, 'type': 'heavy_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Achilles', 'br': 3.3, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'SARC MkVI (6pdr)', 'br': 3.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Sherman II', 'br': 3.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+
+    # Rank II Premium
+    {'name': 'Crusader "The Saint"', 'br': 2.7, 'type': 'light_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Grant I', 'br': 2.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'AEC Mk II', 'br': 3.3, 'type': 'light_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Matilda Hedgehog', 'br': 2.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Cromwell V (RP-3)', 'br': 3.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Churchill AVRE Petard', 'br': 2.7, 'type': 'heavy_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Ram II', 'br': 3.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'A.C.I', 'br': 3.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+
+    # Rank III
+    {'name': 'Sherman Firefly', 'br': 4.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Churchill III', 'br': 4.0, 'type': 'heavy_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Churchill NA75', 'br': 4.3, 'type': 'heavy_tank', 'nation': 'britain', 'premium': False},
+    {'name': '🇬🇧M44', 'br': 4.0, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Ystervark', 'br': 4.0, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Crusader AA Mk II', 'br': 4.0, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Concept 3', 'br': 4.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Challenger', 'br': 5.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Comet I', 'br': 5.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Churchill VII', 'br': 4.7, 'type': 'heavy_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Avenger', 'br': 4.7, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Bosvark', 'br': 5.3, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+
+    # Rank III Premium
+    {'name': 'Achilles (65 Rg.)', 'br': 3.3, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': True},
+    {'name': 'Excelsior', 'br': 4.0, 'type': 'heavy_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Firefly (Overlord)', 'br': 4.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Avenger (Overlord)', 'br': 4.7, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': True},
+    {'name': 'Crusader AA (Overlord)', 'br': 4.0, 'type': 'spaa', 'nation': 'britain', 'premium': True},
+    {'name': 'Churchill Crocodile', 'br': 4.7, 'type': 'heavy_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Sherman IC "Trzyniec"', 'br': 4.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Comet I "Iron Duke IV"', 'br': 5.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'A.C.IV', 'br': 5.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'TOG II', 'br': 5.3, 'type': 'heavy_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'QF 3.7 Ram', 'br': 5.3, 'type': 'spaa', 'nation': 'britain', 'premium': True},
+
+    # Rank IV
+    {'name': 'Centurion Mk 1', 'br': 6.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Charioteer Mk VII', 'br': 6.3, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'FV4005', 'br': 6.3, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': '🇬🇧M109A1', 'br': 6.3, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Skink', 'br': 5.3, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Ratel 90', 'br': 6.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Ratel 20', 'br': 6.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Centurion Mk 3', 'br': 7.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'FV4202', 'br': 7.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'G6', 'br': 6.7, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Eland 90 Mk.7', 'br': 7.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Tortoise', 'br': 6.7, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Conway', 'br': 7.0, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+
+    # Rank IV Premium
+    {'name': '🇬🇧Strv 81 (RB 52)', 'br': 7.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Black Prince', 'br': 6.0, 'type': 'heavy_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Centurion Action X', 'br': 7.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Centurion Mk.2', 'br': 6.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+
+    # Rank V
+    {'name': 'Caernarvon', 'br': 7.7, 'type': 'heavy_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Conqueror', 'br': 7.7, 'type': 'heavy_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Vickers Mk.1', 'br': 8.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Swingfire', 'br': 8.0, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Falcon', 'br': 8.3, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Scimitar', 'br': 7.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Fox', 'br': 8.0, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Centurion Mk 10', 'br': 8.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+
+    # Rank V Premium
+    {'name': 'Centurion Mk.5 AVRE', 'br': 7.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Centurion Mk.5/1', 'br': 7.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+
+    # Rank VI
+    {'name': 'Chieftain Mk 3', 'br': 8.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Chieftain Mk 5', 'br': 8.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Vickers Mk.3', 'br': 8.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Olifant Mk.1A', 'br': 8.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Warrior', 'br': 8.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'ZT3A2', 'br': 8.3, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Chieftain Marksman', 'br': 8.3, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'ZA-35', 'br': 8.7, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Vickers Mk.11', 'br': 8.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Rooikat Mk.1D', 'br': 8.7, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Chieftain Mk 10', 'br': 9.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Olifant Mk.2', 'br': 9.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Striker', 'br': 8.3, 'type': 'tank_destroyer', 'nation': 'britain', 'premium': False},
+    {'name': 'Badger', 'br': 9.0, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'VFM5', 'br': 9.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Rooikat MTTD', 'br': 9.3, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+
+    # Rank VI Premium
+    {'name': 'Vijayanta', 'br': 8.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': '🇬🇧Sho\'t Kal Dalet', 'br': 9.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Khalid', 'br': 9.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Rooikat 105', 'br': 9.7, 'type': 'light_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'FV4030/3', 'br': 10.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+
+    # Rank VII
+    {'name': 'Challenger Mk.2', 'br': 10.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Challenger Mk.3', 'br': 10.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'TTD', 'br': 10.3, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Desert Warrior', 'br': 10.0, 'type': 'light_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Rapier', 'br': 9.7, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Challenger 2', 'br': 11.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Challenger 2 (2F)', 'br': 11.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Challenger 2 TES', 'br': 11.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Vickers Mk.7', 'br': 10.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Stormer AD', 'br': 10.0, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Stormer HVM', 'br': 10.3, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': '🇬🇧Osa-AK', 'br': 10.3, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': '🇬🇧Strela-10M', 'br': 10.3, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+
+    # Rank VII Premium
+    {'name': 'Challenger DS', 'br': 10.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Bhishma TWMP', 'br': 10.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': 'Challenger 2 OES', 'br': 11.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+    {'name': '␙Challenger 2', 'br': 11.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': True},
+
+    # Rank VIII
+    {'name': 'Challenger 3 TD', 'br': 12.0, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'ADATS (M113)', 'br': 11.7, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Black Night', 'br': 12.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Challenger 2E', 'br': 12.7, 'type': 'medium_tank', 'nation': 'britain', 'premium': False},
+    {'name': 'Sky Sabre (TADS)', 'br': 12.7, 'type': 'spaa', 'nation': 'britain', 'premium': False},
+    {'name': 'Sky Sabre (TEL)', 'br': 12.7, 'type': 'spaa', 'nation': 'britain', 'premium': False},
 ]
 
 # Japan Vehicles
 japan_vehicles = [
-    {'name': 'Type 75 SPH', 'br': 6.7, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False}
+    # Rank I
+    {'name': 'Ha-Go', 'br': 1.0, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'I-Go Ko', 'br': 1.0, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Ho-Ro', 'br': 1.3, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 94', 'br': 1.3, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': 'Ke-Ni', 'br': 1.0, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Chi-Ha', 'br': 1.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Ro-Go Exp.', 'br': 1.7, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': 'Ta-Se', 'br': 1.7, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': 'Ka-Mi', 'br': 1.0, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Ho-I', 'br': 2.0, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+
+    # Rank I Premium
+    {'name': 'Ha-Go Commander', 'br': 1.0, 'type': 'light_tank', 'nation': 'japan', 'premium': True},
+    {'name': 'Ka-Chi', 'br': 2.0, 'type': 'medium_tank', 'nation': 'japan', 'premium': True},
+    {'name': 'Ro-Go', 'br': 1.3, 'type': 'heavy_tank', 'nation': 'japan', 'premium': True},
+
+    # Rank II
+    {'name': 'Chi-Ha Kai', 'br': 2.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Ho-Ni I', 'br': 2.0, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': 'Ho-Ni III', 'br': 2.3, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': '▅M16 MGMC', 'br': 2.7, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': 'Chi-He', 'br': 2.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Chi-Ha LG', 'br': 3.0, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': 'So-Ki', 'br': 3.0, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+
+    # Rank II Premium
+    {'name': 'Chi-Ha Short Gun', 'br': 1.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': True},
+    {'name': 'Chi-Ha Kai TD', 'br': 2.3, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': True},
+    {'name': 'Chi-He (5th Regiment)', 'br': 2.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': True},
+
+    # Rank III
+    {'name': '▅M24', 'br': 3.7, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Chi-Nu', 'br': 3.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Na-To', 'br': 3.3, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': '▅M19A1', 'br': 4.0, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': 'Chi-To', 'br': 4.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Chi-To Late', 'br': 4.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': '▅M44', 'br': 4.0, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': '▅M42', 'br': 4.0, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': 'Chi-Ri', 'br': 5.0, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+
+    # Rank III Premium
+    {'name': 'Chi-Nu II', 'br': 4.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': True},
+
+    # Rank IV
+    {'name': '▅M4A3 (76) W', 'br': 5.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'ST-A1', 'br': 6.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'ST-A2', 'br': 6.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': '▅M36', 'br': 5.7, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': 'SUB-I-II', 'br': 5.3, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': '▅M41A1', 'br': 6.3, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 61', 'br': 6.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'ST-A3', 'br': 6.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 75 SPH', 'br': 6.3, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 60 SPRG (C)', 'br': 6.7, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 60 ATM', 'br': 6.7, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+
+    # Rank IV Premium
+    {'name': '▅Heavy Tank No.6', 'br': 6.0, 'type': 'heavy_tank', 'nation': 'japan', 'premium': True},
+    {'name': 'Ho-Ri Prototype', 'br': 6.7, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': True},
+
+    # Rank V
+    {'name': 'Type 87 RCV (P)', 'br': 7.7, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': '▅M47', 'br': 7.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 99', 'br': 7.3, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+    {'name': '🇯🇵M163', 'br': 7.3, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': 'STB-2', 'br': 8.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 74 (C)', 'br': 8.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Ho-Ri Production', 'br': 7.3, 'type': 'tank_destroyer', 'nation': 'japan', 'premium': False},
+
+    # Rank V Premium
+    {'name': 'Type 75 MLRS', 'br': 7.0, 'type': 'spaa', 'nation': 'japan', 'premium': True},
+    {'name': 'Type 74 Red Star', 'br': 8.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': True},
+
+    # Rank VI
+    {'name': 'Type 87 RCV', 'br': 9.0, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 89', 'br': 9.0, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 74 (E)', 'br': 9.0, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 74 (F)', 'br': 9.0, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 16 (P)', 'br': 9.3, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 87', 'br': 8.3, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': '🇯🇵M60A3 TTS', 'br': 9.0, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': '🇯🇵Stingray', 'br': 9.3, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+
+    # Rank VI Premium
+    {'name': 'Type 16 (FPS)', 'br': 9.3, 'type': 'light_tank', 'nation': 'japan', 'premium': True},
+    {'name': 'Type 74 (G)', 'br': 9.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': True},
+
+    # Rank VII
+    {'name': 'ICV (P)', 'br': 9.7, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 90', 'br': 11.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 90 (B)', 'br': 11.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 16', 'br': 9.7, 'type': 'light_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 93', 'br': 9.3, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': 'TKX (P)', 'br': 12.0, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Type 81 (C)', 'br': 11.7, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+
+    # Rank VII Premium
+    {'name': 'RCV (P)', 'br': 9.7, 'type': 'light_tank', 'nation': 'japan', 'premium': True},
+    {'name': 'Type 90 (B) "Fuji"', 'br': 11.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': True},
+
+    # Rank VIII
+    {'name': 'Type 10', 'br': 12.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'TKX', 'br': 12.7, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
+    {'name': 'Tan-SAM Kai (TADS)', 'br': 12.0, 'type': 'spaa', 'nation': 'japan', 'premium': False},
+    {'name': 'BM Oplot-T', 'br': 12.3, 'type': 'medium_tank', 'nation': 'japan', 'premium': False},
 ]
 
 # China Vehicles
