@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-from tanks_data import *
+from .tanks_data import *
 
 class war_thunder(commands.Cog):
     """War Thunder specific commands"""
