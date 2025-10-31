@@ -91,10 +91,10 @@ class war_thunder(commands.Cog):
         # Get vehicles filtered by nation and account type
         all_vehicles = await self.get_vehicles_by_nation(nation, account_type)
         
-        # Filter vehicles within acceptable BR range (typically ±1.0)
+        # Filter vehicles within acceptable BR range (anything lower than the br itself)
         br_range_vehicles = [
             v for v in all_vehicles 
-            if battle_rating <= v['br']
+            if v['br'] <= battle_rating
         ]
         
         lineup = []
