@@ -24,7 +24,23 @@ For the different penalty levels refer to the sheet below. It describes the effe
 https://cdn.discordapp.com/attachments/448113238400303115/1179893424502087700/image.png?ex=657b7061&is=6568fb61&hm=7fc1c75213ff8f8fd6f76517ba55aa309694b90fcdf9a2ef01fba26fbe0defaf&
 https://cdn.discordapp.com/attachments/580302435147448336/1183502495641776268/image.png?ex=65889197&is=65761c97&hm=52342e65ee7b3373b452dbe04b7b7140e8c6a036b9df741b0f5d807ceb77eaf1&""")
 
+    @commands.command(name='missile_evasion', help='shows steps on missile evasion')
+    async def missile_evasion(self, ctx):
+        await ctx.send(f"""A few videos by DEFYN on how to evade every missile type (IR, IRCCM, SARH, ARH), as well as a useful diagram explaining how to notch.
+
+# **War Thunder Guide 6.0 - Defeating Infrared Guided Missiles (IRCCM Included)**
+<https://www.youtube.com/watch?v=Q4PMaFA9Obs>
+# **War Thunder Air Guides Part 7 - Using And Defeating Radar Missiles (FOX-3 & FOX-1)**
+<https://www.youtube.com/watch?v=l80IHJPOh9w>
+https://media.discordapp.net/attachments/499222683435794432/1253818356654542918/notchDiagram.png?ex=672bda57&is=672a88d7&hm=e0b58cb40157f1a688dc2958f272615f888baf5ba255b80bdaa4efda60566442&format=webp&quality=lossless&width=1819&height=1365&""")
+
+    @commands.command(name='weaponry_data')
+    async def weaponry_data(self, ctx):
+        await citx.send(f"""**Stats for almost all guided weapons in game:**
+https://docs.google.com/spreadsheets/d/1SsOpw9LAKOs0V5FBnv1VqAlu3OssmX7DJaaVAUREw78/edit#gid=1624345539'""")
+        
     
+
 
 async def setup(bot):
     await bot.add_cog(war_thunder(bot))
