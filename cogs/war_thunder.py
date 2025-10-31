@@ -101,32 +101,32 @@ class war_thunder(commands.Cog):
         slots_filled = 0
         total_slots = 7
         
-        # Step 1: Find light tank (highest BR light tank available)
-        light_tanks = [v for v in br_range_vehicles if v['type'] == 'light_tank']
+        # Step 1: Find light tank (highest BR light tank available AT OR BELOW target BR)
+        light_tanks = [v for v in br_range_vehicles if v['type'] == 'light_tank' and v['br'] <= battle_rating]
         if light_tanks:
             light_tank = max(light_tanks, key=lambda x: x['br'])
             lineup.append(light_tank)
             br_range_vehicles.remove(light_tank)
             slots_filled += 1
-        
-        # Step 2: Find SPAA (highest BR SPAA available)
-        spaas = [v for v in br_range_vehicles if v['type'] == 'spaa']
+
+        # Step 2: Find SPAA (highest BR SPAA available AT OR BELOW target BR)
+        spaas = [v for v in br_range_vehicles if v['type'] == 'spaa' and v['br'] <= battle_rating]
         if spaas:
             spaa = max(spaas, key=lambda x: x['br'])
             lineup.append(spaa)
             br_range_vehicles.remove(spaa)
             slots_filled += 1
-        
-        # Step 3: Find tank destroyer (highest BR TD available)
-        tank_destroyers = [v for v in br_range_vehicles if v['type'] == 'tank_destroyer']
+
+        # Step 3: Find tank destroyer (highest BR TD available AT OR BELOW target BR)
+        tank_destroyers = [v for v in br_range_vehicles if v['type'] == 'tank_destroyer' and v['br'] <= battle_rating]
         if tank_destroyers:
             tank_destroyer = max(tank_destroyers, key=lambda x: x['br'])
             lineup.append(tank_destroyer)
             br_range_vehicles.remove(tank_destroyer)
             slots_filled += 1
-        
-        # Step 4: Find heavy tank (highest BR heavy tank available)
-        heavy_tanks = [v for v in br_range_vehicles if v['type'] == 'heavy_tank']
+
+        # Step 4: Find heavy tank (highest BR heavy tank available AT OR BELOW target BR)
+        heavy_tanks = [v for v in br_range_vehicles if v['type'] == 'heavy_tank' and v['br'] <= battle_rating]
         if heavy_tanks:
             heavy_tank = max(heavy_tanks, key=lambda x: x['br'])
             lineup.append(heavy_tank)
@@ -135,7 +135,7 @@ class war_thunder(commands.Cog):
         
         # Step 5: Fill remaining slots with medium tanks
         # Start with exact BR match, then move down
-        medium_tanks = [v for v in br_range_vehicles if v['type'] == 'medium_tank']
+        medium_tanks = [v for v in br_range_vehicles if v['type'] == 'medium_tank' and v['br'] <= battle_rating]
         
         # Sort medium tanks by BR (closest to target BR first, then descending)
         medium_tanks.sort(key=lambda x: (abs(x['br'] - battle_rating), -x['br']))
