@@ -94,7 +94,7 @@ class war_thunder(commands.Cog):
         # Filter vehicles within acceptable BR range (typically ±1.0)
         br_range_vehicles = [
             v for v in all_vehicles 
-            if battle_rating - 1.0 <= v['br']
+            if battle_rating <= v['br']
         ]
         
         lineup = []
