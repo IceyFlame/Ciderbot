@@ -156,7 +156,7 @@ class war_thunder(commands.Cog):
         
         # Create embed with the lineup
         embed = discord.Embed(
-            title=f"{nation.upper()} {battle_rating} {account_type.upper()} Lineup",
+            title=f"{nation.upper()} {battle_rating} Lineup",
             description="Ground Realistic Battles",
             color=discord.Color.blue()
         )
