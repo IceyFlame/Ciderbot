@@ -126,7 +126,7 @@ class war_thunder(commands.Cog):
             slots_filled += 1
 
         # Step 4: Find heavy tank (highest BR heavy tank available AT OR BELOW target BR)
-        heavy_tanks = [v for v in br_range_vehicles if v['type'] == 'heavy_tank' and v['br'] <= battle_rating - 0.6]
+        heavy_tanks = [v for v in br_range_vehicles if v['type'] == 'heavy_tank' and v['br'] >= battle_rating - 0.6]
         if heavy_tanks:
             heavy_tank = max(heavy_tanks, key=lambda x: x['br'])
             lineup.append(heavy_tank)
