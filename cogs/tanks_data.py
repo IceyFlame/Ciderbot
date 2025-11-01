@@ -7,7 +7,6 @@ Vehicle types: light_tank, medium_tank, heavy_tank, tank_destroyer, spaa
 """
 
 # USA Vehicles
-# USA Vehicles
 usa_vehicles = [
     # Rank I - Researchable
     {'name': 'M2A4', 'br': 1.0, 'type': 'light_tank', 'nation': 'usa', 'premium': False},
@@ -184,7 +183,6 @@ usa_vehicles = [
     {'name': 'CLAWS (TADS)', 'br': 12.3, 'type': 'spaa', 'nation': 'usa', 'premium': False},
 ]
 
-# Germany Vehicles
 # Germany Vehicles
 germany_vehicles = [
     # Rank I - Researchable
@@ -916,7 +914,7 @@ china_vehicles = [
     {'name': '🇨🇳SU-100', 'br': 6.0, 'type': 'tank_destroyer', 'nation': 'china', 'premium': False},
     {'name': 'Type 63', 'br': 6.3, 'type': 'light_tank', 'nation': 'china', 'premium': False},
     {'name': 'Type 62', 'br': 6.7, 'type': 'light_tank', 'nation': 'china', 'premium': False},
-    {'name': 'ZSL92', 'br': 6.3, 'type': 'light_tank', 'nation': 'china', 'premium': False},
+    {'name': 'ZSL92', 'br': 6.3, 'type': 'spaa', 'nation': 'china', 'premium': False},
     {'name': 'PLZ83', 'br': 6.3, 'type': 'tank_destroyer', 'nation': 'china', 'premium': False},
     {'name': 'ZTS63', 'br': 7.7, 'type': 'light_tank', 'nation': 'china', 'premium': False},
     {'name': 'ZBD86', 'br': 8.0, 'type': 'light_tank', 'nation': 'china', 'premium': False},

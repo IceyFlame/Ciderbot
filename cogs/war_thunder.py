@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 from .tanks_data import *
+from .aircraft_data import *
 
 class war_thunder(commands.Cog):
     """War Thunder specific commands"""
@@ -89,18 +90,22 @@ class war_thunder(commands.Cog):
         """Generate the actual lineup"""
         
         # Get vehicles filtered by nation and account type
-        all_vehicles = await self.get_vehicles_by_nation(nation, account_type)
+        ground_vehicles = await self.get_vehicles_by_nation(nation, account_type)
+        aircraft = await self.get_planes_by_nation(nation, account_type)
         
         # Filter vehicles within acceptable BR range (anything lower than the br itself)
         br_range_vehicles = [
-            v for v in all_vehicles 
+            v for v in ground_vehicles 
+            if v['br'] <= battle_rating
+        ]
+        aircraft_vehicles = [
+            v for v in aircraft
             if v['br'] <= battle_rating
         ]
         
         lineup = []
         slots_filled = 0
-        total_slots = 7
-        
+
         # Step 1: Find light tank (highest BR light tank available AT OR BELOW target BR)
         light_tanks = [v for v in br_range_vehicles if v['type'] == 'light_tank' and v['br'] <= battle_rating]
         if light_tanks:
@@ -118,7 +123,7 @@ class war_thunder(commands.Cog):
             slots_filled += 1
 
         # Step 3: Find tank destroyer (highest BR TD available AT OR BELOW target BR)
-        tank_destroyers = [v for v in br_range_vehicles if v['type'] == 'tank_destroyer' and v['br'] <= battle_rating]
+        tank_destroyers = [v for v in br_range_vehicles if v['type'] == 'tank_destroyer' and v['br'] >= battle_rating - 0.6]
         if tank_destroyers:
             tank_destroyer = max(tank_destroyers, key=lambda x: x['br'])
             lineup.append(tank_destroyer)
@@ -132,27 +137,60 @@ class war_thunder(commands.Cog):
             lineup.append(heavy_tank)
             br_range_vehicles.remove(heavy_tank)
             slots_filled += 1
-        
-        # Step 5: Fill remaining slots with medium tanks
-        # Start with exact BR match, then move down
+
+        # Step 5: Fill remaining TANK slots with medium tanks (up to 4 total ground vehicles)
         medium_tanks = [v for v in br_range_vehicles if v['type'] == 'medium_tank' and v['br'] <= battle_rating]
-        
-        # Sort medium tanks by BR (closest to target BR first, then descending)
         medium_tanks.sort(key=lambda x: (abs(x['br'] - battle_rating), -x['br']))
-        
-        # Fill remaining slots with medium tanks
-        remaining_slots = total_slots - slots_filled
-        for i in range(min(remaining_slots, len(medium_tanks))):
+
+        remaining_tank_slots = 4 - slots_filled
+        for i in range(min(remaining_tank_slots, len(medium_tanks))):
             lineup.append(medium_tanks[i])
             slots_filled += 1
-        
-        # If we still have slots, fill with any remaining vehicles (sorted by BR)
-        if slots_filled < total_slots:
-            remaining_vehicles = [v for v in br_range_vehicles if v not in lineup]
-            remaining_vehicles.sort(key=lambda x: x['br'], reverse=True)
+
+        # If we still need more ground vehicles to reach 4, fill with any remaining
+        if slots_filled < 4:
+            remaining_ground_vehicles = [v for v in br_range_vehicles if v not in lineup and v['type'] in ['light_tank', 'medium_tank', 'heavy_tank', 'tank_destroyer', 'spaa']]
+            remaining_ground_vehicles.sort(key=lambda x: x['br'], reverse=True)
             
-            for i in range(min(total_slots - slots_filled, len(remaining_vehicles))):
-                lineup.append(remaining_vehicles[i])
+            for i in range(min(4 - slots_filled, len(remaining_ground_vehicles))):
+                lineup.append(remaining_ground_vehicles[i])
+                slots_filled += 1
+
+        # AIRCRAFT SLOTS (2 slots - ALWAYS add both)
+        aircraft_vehicles = [v for v in aircraft_vehicles if v['type'] in ['fighter', 'strike_aircraft', 'bomber'] and v['br'] <= battle_rating]
+
+        # Fighter (Slot 5)
+        fighters = [v for v in aircraft_vehicles if v['type'] == 'fighter']
+        if fighters:
+            fighter = max(fighters, key=lambda x: x['br'])
+            lineup.append(fighter)
+            aircraft_vehicles.remove(fighter)
+
+        # Strike aircraft or bomber (Slot 6)
+        strike_aircraft = [v for v in aircraft_vehicles if v['type'] in ['strike_aircraft', 'bomber']]
+        if strike_aircraft:
+            strike = max(strike_aircraft, key=lambda x: x['br'])
+            lineup.append(strike)
+            aircraft_vehicles.remove(strike)
+
+        # SLOT 7: Helicopter (if BR ≥ 8.0) OR Medium Tank (if BR < 8.0 or no helicopter)
+        if battle_rating >= 8.0:
+            helicopters = [v for v in aircraft_vehicles if v['type'] == 'helicopter' and v['br'] <= battle_rating]
+            if helicopters:
+                helicopter = max(helicopters, key=lambda x: x['br'])
+                lineup.append(helicopter)
+            else:
+                # No helicopter available, add a medium tank instead
+                remaining_medium_tanks = [v for v in br_range_vehicles if v['type'] == 'medium_tank' and v not in lineup]
+                if remaining_medium_tanks:
+                    medium_tank = max(remaining_medium_tanks, key=lambda x: x['br'])
+                    lineup.append(medium_tank)
+        else:
+            # BR < 8.0, add a medium tank
+            remaining_medium_tanks = [v for v in br_range_vehicles if v['type'] == 'medium_tank' and v not in lineup]
+            if remaining_medium_tanks:
+                medium_tank = max(remaining_medium_tanks, key=lambda x: x['br'])
+                lineup.append(medium_tank)
         
         # Create embed with the lineup
         embed = discord.Embed(
@@ -211,6 +249,30 @@ class war_thunder(commands.Cog):
             return vehicles  # Include all vehicles for P2W
         else:
             return vehicles
+
+    async def get_planes_by_nation(self, nation: str, account_type: str) -> list:
+        """Get aircraft for specified nation and filter by account type"""
+        nation_map = {
+            'usa': usa_aircraft,
+            'germany': germany_aircraft,
+            'ussr': ussr_aircraft,
+            'britain': britain_aircraft,
+            'japan': japan_aircraft,
+            'china': china_aircraft,
+            'italy': italy_aircraft,
+            'france': france_aircraft,
+            'sweden': sweden_aircraft,
+            'israel': israel_aircraft
+        }
+        
+        aircraft = nation_map.get(nation, [])
+        
+        if account_type == "f2p":
+            return [v for v in aircraft if not v['premium']]
+        elif account_type == "p2w":
+            return aircraft  # Include all aircraft for P2W
+        else:
+            return aircraft
 
     @commands.command(name='research', help='shows research progress in war thunder')
     async def research(self, ctx):

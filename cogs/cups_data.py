@@ -178,4 +178,4 @@ CM_DATABASE = {
 }
 
 # Set the next upcoming cup
-NEXT_CUP = "Cancer"
+NEXT_CUP = "Leo"
