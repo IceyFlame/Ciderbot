@@ -157,7 +157,7 @@ class war_thunder(commands.Cog):
                 slots_filled += 1
 
         # AIRCRAFT SLOTS (2 slots - ALWAYS add both)
-        aircraft_vehicles = [v for v in aircraft_vehicles if v['type'] in ['fighter', 'strike_aircraft', 'bomber'] and v['br'] <= battle_rating]
+        aircraft_vehicles = [v for v in aircraft_vehicles if v['type'] in ['fighter', 'attack', 'bomber'] and v['br'] <= battle_rating]
 
         # Fighter (Slot 5)
         fighters = [v for v in aircraft_vehicles if v['type'] == 'fighter']
@@ -167,7 +167,7 @@ class war_thunder(commands.Cog):
             aircraft_vehicles.remove(fighter)
 
         # Strike aircraft or bomber (Slot 6)
-        strike_aircraft = [v for v in aircraft_vehicles if v['type'] in ['strike_aircraft', 'bomber']]
+        strike_aircraft = [v for v in aircraft_vehicles if v['type'] in ['attack', 'bomber']]
         if strike_aircraft:
             strike = max(strike_aircraft, key=lambda x: x['br'])
             lineup.append(strike)
