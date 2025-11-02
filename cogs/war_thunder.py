@@ -100,7 +100,7 @@ class war_thunder(commands.Cog):
         ]
         aircraft_vehicles = [
             v for v in aircraft
-            if v['br'] <= battle_rating + 1.0
+            if v['br'] <= battle_rating
         ]
         
         lineup = []
