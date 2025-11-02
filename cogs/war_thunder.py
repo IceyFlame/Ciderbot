@@ -100,7 +100,7 @@ class war_thunder(commands.Cog):
         ]
         aircraft_vehicles = [
             v for v in aircraft
-            if v['br'] <= battle_rating
+            if v['br'] <= battle_rating + 1.0
         ]
         
         lineup = []
@@ -174,23 +174,20 @@ class war_thunder(commands.Cog):
             aircraft_vehicles.remove(strike)
 
         # SLOT 7: Helicopter (if BR ≥ 8.0) OR Medium Tank (if BR < 8.0 or no helicopter)
-        if battle_rating >= 8.0:
-            helicopters = [v for v in aircraft_vehicles if v['type'] == 'helicopter' and v['br'] <= battle_rating]
-            if helicopters:
-                helicopter = max(helicopters, key=lambda x: x['br'])
-                lineup.append(helicopter)
-            else:
-                # No helicopter available, add a medium tank instead
-                remaining_medium_tanks = [v for v in br_range_vehicles if v['type'] == 'medium_tank' and v not in lineup]
-                if remaining_medium_tanks:
-                    medium_tank = max(remaining_medium_tanks, key=lambda x: x['br'])
-                    lineup.append(medium_tank)
+        helicopters = [v for v in aircraft_vehicles if v['type'] == 'helicopter' and v['br'] <= battle_rating]
+        if helicopters:
+            helicopter = max(helicopters, key=lambda x: x['br'])
+            lineup.append(helicopter)
         else:
-            # BR < 8.0, add a medium tank
+            # No helicopter available, add a medium tank instead
             remaining_medium_tanks = [v for v in br_range_vehicles if v['type'] == 'medium_tank' and v not in lineup]
             if remaining_medium_tanks:
                 medium_tank = max(remaining_medium_tanks, key=lambda x: x['br'])
                 lineup.append(medium_tank)
+        remaining_medium_tanks = [v for v in br_range_vehicles if v['type'] == 'medium_tank' and v not in lineup]
+        if remaining_medium_tanks:
+            medium_tank = max(remaining_medium_tanks, key=lambda x: x['br'])
+            lineup.append(medium_tank)
         
         # Create embed with the lineup
         embed = discord.Embed(
@@ -218,7 +215,7 @@ class war_thunder(commands.Cog):
                 f"Tank Destroyer: {len([v for v in lineup if v['type'] == 'tank_destroyer'])}\n"
                 f"Heavy Tank: {len([v for v in lineup if v['type'] == 'heavy_tank'])}\n"
                 f"Medium Tanks: {len([v for v in lineup if v['type'] == 'medium_tank'])}\n"
-                f"Other: {len([v for v in lineup if v['type'] not in ['light_tank', 'spaa', 'tank_destroyer', 'heavy_tank', 'medium_tank']])}",
+                f"Aircraft: {len([v for v in lineup if v['type'] not in ['light_tank', 'spaa', 'tank_destroyer', 'heavy_tank', 'medium_tank']])}",
             inline=True
         )
         
