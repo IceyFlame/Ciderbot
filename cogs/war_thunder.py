@@ -167,7 +167,7 @@ class war_thunder(commands.Cog):
             aircraft_vehicles.remove(fighter)
 
         # Strike aircraft or bomber (Slot 6)
-        strike_aircraft = [v for v in aircraft_vehicles if v['type'] in ['strike_aircraft', 'bomber'] and v['br'] >= battle_rating - 2.0]
+        strike_aircraft = [v for v in aircraft_vehicles if v['type'] in ['strike_aircraft', 'bomber']]
         if strike_aircraft:
             strike = max(strike_aircraft, key=lambda x: x['br'])
             lineup.append(strike)
