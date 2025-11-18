@@ -178,4 +178,4 @@ CM_DATABASE = {
 }
 
 # Set the next upcoming cup
-NEXT_CUP = "Leo"
+NEXT_CUP = "Virgo"

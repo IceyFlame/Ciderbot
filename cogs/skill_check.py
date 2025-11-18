@@ -26,6 +26,7 @@ class SkillCheck(commands.Cog):
 
     def get_recommendation(self, rating):
         rating_map = {
+            "⍟": "🔥 **MUST HAVE** (Absolutely necessary)",
             "◎": "✅ **Yes** (Top priority)",
             "◯": "✅ **Yes** (Good skill)", 
             "▲": "⚠️ **Maybe** (Situationaly good)",
@@ -95,7 +96,7 @@ class SkillCheck(commands.Cog):
         # Add rating guide as a field inside the embed
         embed.add_field(
             name="Rating Guide",
-            value="◎ = Top tier\n◯ = Good\n▲/△ = Situational\n✕ = Bad",
+            value="⍟ = Must have\n◎ = Top tier\n◯ = Good\n▲/△ = Situational\n✕ = Bad",
             inline=False
         )
 
