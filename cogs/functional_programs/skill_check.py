@@ -1,7 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-from .skill_data import speed_skills, acceleration_skills, stamina_skills, debuff_skills, other_skills
+from cogs.game_data.skill_data import speed_skills, acceleration_skills, stamina_skills, debuff_skills, other_skills
 
 # Combine all skills into one dictionary for searching
 all_skills = {}

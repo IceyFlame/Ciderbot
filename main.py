@@ -21,10 +21,25 @@ class DiscordBot(commands.Bot):
             intents=intents
         )
     
+    async def setup_hook(self):
+        """Load all cogs when bot starts up"""
+        await self.load_all_cogs()
+        
+        # Sync commands to test guild and globally
+        try:
+            test_guild = discord.Object(id=Config.TEST_GUILD_ID)
+            self.tree.copy_global_to(guild=test_guild)
+            await self.tree.sync(guild=test_guild)
+            print(f"Commands synced to test guild")
+            
+            synced = await self.tree.sync()
+            print(f"Synced {len(synced)} global commands")
+        except Exception as e:
+            print(f"Error syncing commands: {e}")
+    
     async def load_all_cogs(self):
         """Load cogs from specific folders"""
         cog_folders = [
-            'cogs.game_data',
             'cogs.functional_programs', 
             'cogs.utilities'
         ]
@@ -40,18 +55,6 @@ class DiscordBot(commands.Bot):
                             print(f'✅ Loaded {module_path}')
                         except Exception as e:
                             print(f'❌ Failed to load {module_path}: {e}')
-        
-        # Sync commands to test guild and globally
-        try:
-            test_guild = discord.Object(id=Config.TEST_GUILD_ID)
-            self.tree.copy_global_to(guild=test_guild)
-            await self.tree.sync(guild=test_guild)
-            print(f"Commands synced to test guild")
-            
-            synced = await self.tree.sync()
-            print(f"Synced {len(synced)} global commands")
-        except Exception as e:
-            print(f"Error syncing commands: {e}")
 
 async def main():
     """Main entry point"""

@@ -2,8 +2,7 @@ import discord
 import datetime
 from discord.ext import commands
 from discord import app_commands
-from .cups_data import CM_Cup
-from .cups_data import CM_DATABASE, NEXT_CUP
+from cogs.game_data.cups_data import CM_DATABASE, NEXT_CUP
 
 class cm_info(commands.Cog):
     def __init__(self, bot):

@@ -5,6 +5,15 @@ Structure for each Aircraft:
 Vehicle types: fighter, strike fighter, bomber, helicopter (intercepters are considered fighters)
 """
 
+from discord.ext import commands
+
+class AircraftData(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+async def setup(bot):
+    await bot.add_cog(AircraftData(bot))
+
 usa_aircraft = [
     {'name': 'P-26A-34 M2', 'br': 1.0, 'type': 'fighter', 'nation': 'USA', 'premium': False, 'unit_id': 'p-26a_34_m2'},
     {'name': 'P-36A', 'br': 1.3, 'type': 'fighter', 'nation': 'USA', 'premium': False, 'unit_id': 'p-36a'},
