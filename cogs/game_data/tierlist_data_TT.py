@@ -2,9 +2,13 @@
 tt_explanations = {
     # Speed Skills - TT
     "[Run Style] Corners ◯": "Cheap and consistent, they are must-haves",
-    "[Run Style] Straightaways ◯": "Cheap and consistent, they are must-haves",
-    "[Distance] Corners ◯": "Cheap and consistent, they are must-haves", 
+    "[Run Style] Straightaways ◯": "Cheap and consistent, they are must-haves", 
+    "[Run Style] Corners ◎": "Cheap and consistent, they are must-haves",
+    "[Distance] Corners ◯": "Cheap and consistent, they are must-haves",
+    "[Run Style] Straightaways ◎": "Cheap and consistent, they are must-haves",
     "[Distance] Straightaways ◯": "Cheap and consistent, they are must-haves",
+    "[Distance] Corners ◎": "Cheap and consistent, they are must-haves",
+    "[Distance] Straightaways ◎": "Cheap and consistent, they are must-haves",
     "Uma Stan": "Good speed skill, can help to release PDM on some longer tracks",
     "Uma Mania": "Good speed skill, can help to release PDM on some longer tracks",
     "Tail Held High": "Cheap and consistent, though note the condition of requiring 3 skill activations before acquiring it",
