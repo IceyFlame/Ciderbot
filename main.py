@@ -21,24 +21,25 @@ class DiscordBot(commands.Bot):
             intents=intents
         )
     
-    async def setup_hook(self):
-        """Load all cogs when bot starts up"""
-        cogs_to_load = [
-            'cogs.utilities',
-            'cogs.fun_commands', 
-            'cogs.moderation',
-            'cogs.skill_check',
-            'cogs.cm_info',
-            'cogs.announcements',
-            'cogs.war_thunder'
+    async def load_all_cogs(self):
+        """Load cogs from specific folders"""
+        cog_folders = [
+            'cogs.game_data',
+            'cogs.functional_programs', 
+            'cogs.utilities'
         ]
         
-        for cog in cogs_to_load:
-            try:
-                await self.load_extension(cog)
-                print(f'✅ Loaded {cog}')
-            except Exception as e:
-                print(f'❌ Failed to load {cog}: {e}')
+        for folder in cog_folders:
+            cog_path = folder.replace('.', '/')
+            if os.path.exists(cog_path):
+                for file in os.listdir(cog_path):
+                    if file.endswith('.py') and not file.startswith('__'):
+                        module_path = f"{folder}.{file[:-3]}"
+                        try:
+                            await self.load_extension(module_path)
+                            print(f'✅ Loaded {module_path}')
+                        except Exception as e:
+                            print(f'❌ Failed to load {module_path}: {e}')
         
         # Sync commands to test guild and globally
         try:
