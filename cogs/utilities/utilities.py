@@ -1,14 +1,12 @@
 import discord
 import random
 from discord.ext import commands
-from health_server import HealthServer
 
 class Utilities(commands.Cog):
     """Utility commands and basic bot functions"""
 
     def __init__(self, bot):
         self.bot = bot
-        self.health_server = None
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -17,11 +15,6 @@ class Utilities(commands.Cog):
         print(f'Bot is connected to {len(self.bot.guilds)} guild(s)')
         print("Registered commands:",
               [command.name for command in self.bot.commands])
-
-        # Start health check server if not already running
-        if not self.health_server:
-            self.health_server = HealthServer(self.bot)
-            self.health_server.start()
 
     @commands.command(name='hello', help='Responds with a greeting')
     async def hello(self, ctx):

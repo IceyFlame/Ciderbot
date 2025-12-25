@@ -1,5 +1,4 @@
 import discord
-import datetime
 from discord.ext import commands
 from discord import app_commands
 from cogs.game_data.cups_data import CM_DATABASE, NEXT_CUP
