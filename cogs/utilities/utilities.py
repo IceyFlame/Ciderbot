@@ -37,7 +37,7 @@ Run! Mecha-Umamusume - [O-Rorize](https://www.youtube.com/watch?v=HjMuwuyFkxI&li
 The Twinkle Legends - [Legend Changer](https://www.youtube.com/watch?v=Kpf2mmyzuMM&list=RDKpf2mmyzuMM&start_radio=1&pp=ygUOTGVnZW5kIENoYW5nZXKgBwE%3D)
 Design Your Island - [Tucker's Skill-Up Island](https://www.youtube.com/watch?v=Fl-4S-vUxPg&list=RDFl-4S-vUxPg&start_radio=1)
 Paradise ♪ Yukoma Hot Springs - [Yukoma Thermae](https://www.youtube.com/watch?v=86I1qlLny_A&list=RD86I1qlLny_A&start_radio=1&pp=ygUOeXVrb21hIHRoZXJtYWWgBwE%3D)
-Beyond Dreams - [UMA in America](https://www.youtube.com/watch?v=oQQCBaGO8oU&list=RDoQQCBaGO8oU&start_radio=1)""")
+Beyond Dreams - [UMA in America](https://www.youtube.com/watch?v=oQQCBaGO8oU&list=RDoQQCBaGO8oU&start_radio=1)""", suppress_embeds=True)
 
 
     @commands.command(name='ping', help='Returns the bot latency')
