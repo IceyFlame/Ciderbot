@@ -21,6 +21,25 @@ class Utilities(commands.Cog):
         """Simple hello command"""
         await ctx.send(f'Hello {ctx.author.mention}!')
 
+    @commands.command(name = 'Winning Live', help = 'displays the winning live songs for each scenario', aliases=["wl"])
+    async def wl(self, ctx):
+        await ctx.send("""Below is a compilation of Winning Live songs for each scenario (as compiled by CrippleCrownEmperor):
+
+URA Finale - [Umapyoi Densetsu](https://www.youtube.com/watch?v=NaYMw_P4WU8&list=PLBAg4T7zxKzo3p36JbSTBgOjTJcZ0rZ8V&index=5&pp=iAQB8AUB)
+Aoharu Hai (Unity Cup) - [WINnin' Five](https://www.youtube.com/watch?v=mR01PgKF-lU&list=PLBAg4T7zxKzo3p36JbSTBgOjTJcZ0rZ8V&index=10&pp=iAQB8AUB)
+Make a New Track (Trackblazer) - [Blow my Gale](https://www.youtube.com/watch?v=7OuVm8V122Q&list=PLBAg4T7zxKzo3p36JbSTBgOjTJcZ0rZ8V&index=17&pp=iAQB8AUB)
+Our Grand Live - [Girls' Legend U](https://www.youtube.com/watch?v=G7RmGsHxv-Q&list=PLBAg4T7zxKzo3p36JbSTBgOjTJcZ0rZ8V&index=1&pp=iAQB8AUB)
+Grand Masters - [Everlasting Beats](https://www.youtube.com/watch?v=wq0S1dbTWio&list=PLBAg4T7zxKzo3p36JbSTBgOjTJcZ0rZ8V&index=47&pp=iAQB8AUB)
+Project l'Arc - [L'Arc de Gloire](https://www.youtube.com/watch?v=GJNMS1jEV_o&list=PLBAg4T7zxKzo3p36JbSTBgOjTJcZ0rZ8V&index=53&pp=iAQB8AUB)
+U.A.F. Ready GO! - [Bakunetsu my Soul](https://www.youtube.com/watch?v=AvoWpVmJHgI&list=PLBAg4T7zxKzo3p36JbSTBgOjTJcZ0rZ8V&index=63&pp=iAQB8AUB)
+Shuukaku! Manpaku! Daihoushokusa - [Umasugi! Gourmet Parade](https://www.youtube.com/watch?v=c2EerlVb7Js&list=PLBAg4T7zxKzo3p36JbSTBgOjTJcZ0rZ8V&index=74&pp=iAQB8AUB)
+Run! Mecha-Umamusume - [O-Rorize](https://www.youtube.com/watch?v=HjMuwuyFkxI&list=RDHjMuwuyFkxI&start_radio=1&pp=ygUIby1yb3JpemWgBwE%3D)
+The Twinkle Legends - [Legend Changer](https://www.youtube.com/watch?v=Kpf2mmyzuMM&list=RDKpf2mmyzuMM&start_radio=1&pp=ygUOTGVnZW5kIENoYW5nZXKgBwE%3D)
+Design Your Island - [Tucker's Skill-Up Island](https://www.youtube.com/watch?v=Fl-4S-vUxPg&list=RDFl-4S-vUxPg&start_radio=1)
+Paradise ♪ Yukoma Hot Springs - [Yukoma Thermae](https://www.youtube.com/watch?v=86I1qlLny_A&list=RD86I1qlLny_A&start_radio=1&pp=ygUOeXVrb21hIHRoZXJtYWWgBwE%3D)
+Beyond Dreams - [UMA in America](https://www.youtube.com/watch?v=oQQCBaGO8oU&list=RDoQQCBaGO8oU&start_radio=1)""")
+
+
     @commands.command(name='ping', help='Returns the bot latency')
     async def ping(self, ctx):
         """Check bot latency"""
